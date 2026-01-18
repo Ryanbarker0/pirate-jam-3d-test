@@ -1,0 +1,57 @@
+[gd_scene load_steps=4 format=3 uid="uid://cumraulaxyyd8"]
+
+[ext_resource type="PackedScene" uid="uid://d2wv8soapteie" path="res://assets/character/GLTF/Astronaut_FernandoTheFlamingo.gltf" id="1_a8w0u"]
+[ext_resource type="Script" uid="uid://bjyyy7uvjilb4" path="res://scripts/player_movements.gd" id="2_lsf5h"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_a8w0u"]
+radius = 0.7294922
+height = 2.6157227
+
+[node name="Astronaut_FernandoTheFlamingo" instance=ExtResource("1_a8w0u")]
+script = ExtResource("2_lsf5h")
+
+[node name="Skeleton3D" parent="CharacterArmature" index="0"]
+bones/2/rotation = Quaternion(-3.5526934e-15, 1.1920933e-07, -8.470341e-22, 1)
+bones/4/rotation = Quaternion(0.16683151, 4.3189968e-07, 1.031202e-07, 0.9859854)
+bones/5/rotation = Quaternion(-0.005369791, -8.323206e-07, -1.2004656e-09, 0.9999856)
+bones/6/rotation = Quaternion(-0.0017300667, 1.0356428e-06, -7.517644e-10, 0.9999985)
+bones/7/rotation = Quaternion(0.015637, -0.00027579904, -4.2903152e-06, 0.9998777)
+bones/8/rotation = Quaternion(-0.04222673, 0.008971404, -0.4103366, 0.9109118)
+bones/9/rotation = Quaternion(0.5204658, 0.5033429, 0.48082265, -0.49454114)
+bones/10/rotation = Quaternion(0.022454025, 0.26599237, -0.20974976, 0.94061095)
+bones/13/rotation = Quaternion(-0.106641546, -0.0009219654, 0.008597357, 0.99425995)
+bones/15/rotation = Quaternion(-0.11277097, 0.0007699381, 0.014515005, 0.9935147)
+bones/16/rotation = Quaternion(0.020557396, -0.0009909462, -0.0012504352, 0.99978745)
+bones/18/rotation = Quaternion(0.04225395, 0.025641702, 0.2323046, 0.9713865)
+bones/19/rotation = Quaternion(-0.076612145, -0.0015270496, -0.01986751, 0.99686193)
+bones/20/rotation = Quaternion(-0.013714624, -0.02970737, -0.677202, 0.73506933)
+bones/21/rotation = Quaternion(-0.011628175, 0.002523536, 0.21219246, 0.97715545)
+bones/22/rotation = Quaternion(-0.042226486, -0.008970843, 0.4103367, 0.9109118)
+bones/23/rotation = Quaternion(0.5204659, -0.50334287, -0.48082268, -0.49454105)
+bones/24/rotation = Quaternion(0.022454116, -0.26599246, 0.20974976, 0.940611)
+bones/26/rotation = Quaternion(-0.028374847, 0.0048223785, 0.167482, 0.9854549)
+bones/27/rotation = Quaternion(-0.10664147, 0.0009219587, -0.008597363, 0.99425995)
+bones/28/rotation = Quaternion(0.024549237, 0.001081327, 0.008041184, 0.99966574)
+bones/29/rotation = Quaternion(-0.112771, -0.00076994236, -0.014515013, 0.9935147)
+bones/30/rotation = Quaternion(0.020557385, 0.0009909268, 0.0012504358, 0.99978745)
+bones/32/rotation = Quaternion(0.04225399, -0.025641724, -0.23230468, 0.97138655)
+bones/33/rotation = Quaternion(-0.076612234, 0.0015270378, 0.019867552, 0.9968618)
+bones/34/rotation = Quaternion(-0.013714636, 0.029707352, 0.677202, 0.73506933)
+bones/35/rotation = Quaternion(-0.011628159, -0.0025235119, -0.21219243, 0.97715545)
+bones/36/rotation = Quaternion(0.9650399, 0.008726846, 0.0021166382, 0.26194906)
+bones/37/rotation = Quaternion(0.5170187, 0.0063198637, 0.008506166, 0.8559086)
+bones/38/rotation = Quaternion(0.96504, -0.008726946, -0.0021157695, 0.26194897)
+bones/39/rotation = Quaternion(0.5170186, -0.0063198856, -0.008506201, 0.8559086)
+bones/40/rotation = Quaternion(-3.5526934e-15, 1.1920937e-07, -8.470344e-22, 1)
+bones/41/rotation = Quaternion(-1.207786e-05, 0.7058064, 0.70840484, -1.1664422e-05)
+bones/42/rotation = Quaternion(-3.552734e-15, -5.9604645e-07, 3.3881257e-21, 1)
+
+[node name="Middle1_R" parent="CharacterArmature/Skeleton3D" index="0"]
+transform = Transform3D(-0.5573019, -0.6109841, -0.5622393, 0.1564369, -0.7422812, 0.6515718, -0.81543946, 0.27516717, 0.50925493, -1.2383864, 0.63223207, -0.07702595)
+
+[node name="AnimationPlayer" parent="." index="1"]
+autoplay = "Idle"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3078613, 0)
+shape = SubResource("CapsuleShape3D_a8w0u")

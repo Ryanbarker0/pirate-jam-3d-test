@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://bxb8uqj80nmmg"]
+
+[ext_resource type="ArrayMesh" uid="uid://cuyvfy40pgfty" path="res://resources/floor-panel.res" id="1_uoavv"]
+[ext_resource type="ArrayMesh" uid="uid://bgvxr345a42c1" path="res://resources/floor.res" id="2_1lll1"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_m07oa"]
+points = PackedVector3Array(-0.5, 0, -0.5, -0.5, 0, 0.5, -0.5, 0.3, -0.5, 0.5, 0, -0.5, -0.5, 0.3, 0.5, 0.5, 0, 0.5, 0.5, 0.3, -0.5, 0.5, 0.3, 0.5)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_5ahqm"]
+points = PackedVector3Array(-0.5, 0, -0.5, -0.5, 0.3, -0.5, 0.5, 0, -0.5, -0.5, 0, 0.5, -0.5, 0.3, 0.5, 0.5, 0.3, -0.5, 0.5, 0, 0.5, 0.5, 0.3, 0.5)
+
+[node name="floorPanelMeshLibrary" type="Node3D"]
+
+[node name="floor-panel" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_uoavv")
+skeleton = NodePath("")
+
+[node name="floor_tile" type="StaticBody3D" parent="floor-panel"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="floor-panel/floor_tile"]
+shape = SubResource("ConvexPolygonShape3D_m07oa")
+
+[node name="floor" type="MeshInstance3D" parent="."]
+mesh = ExtResource("2_1lll1")
+skeleton = NodePath("")
+
+[node name="floor_panel" type="StaticBody3D" parent="floor"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="floor/floor_panel"]
+shape = SubResource("ConvexPolygonShape3D_5ahqm")

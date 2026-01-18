@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://i6w706ay5h46"]
+
+[ext_resource type="PackedScene" uid="uid://6k0sv5afdjwf" path="res://assets/arena/Models/GLB format/floor-panel.glb" id="1_m07oa"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m07oa"]
+albedo_color = Color(0.101960786, 0.101960786, 0.101960786, 1)
+roughness = 0.7
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_m07oa"]
+points = PackedVector3Array(-0.5, 0, -0.5, -0.5, 0, 0.5, -0.5, 0.3, -0.5, 0.5, 0, -0.5, -0.5, 0.3, 0.5, 0.5, 0, 0.5, 0.5, 0.3, -0.5, 0.5, 0.3, 0.5)
+
+[node name="floor_tile" instance=ExtResource("1_m07oa")]
+
+[node name="floor-panel" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_m07oa")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
+shape = SubResource("ConvexPolygonShape3D_m07oa")
